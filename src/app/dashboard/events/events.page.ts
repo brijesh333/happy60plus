@@ -7,10 +7,10 @@ import { EVENT } from './events.constant';
     styleUrls: ['./events.page.scss'],
 })
 export class EventsPage implements OnInit {
-    
+
     @ViewChild(IonInfiniteScroll, { read: '', static: false }) infiniteScroll: IonInfiniteScroll;
-    eventListType:string=EVENT.TYPE.CURRENT;
-    eventSearch:string='';
+    eventListType: string = EVENT.TYPE.CURRENT;
+    eventSearch: string = '';
     eventList = [
         {
             icon: 'walk',
@@ -84,16 +84,16 @@ export class EventsPage implements OnInit {
         this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
     }
 
-    onEventSearch(event){
+    onEventSearch(event) {
         console.log(event);
     }
 
-    onEventSearchCancel(){
-        this.eventSearch='';
+    onEventSearchCancel() {
+        this.eventSearch = '';
     }
 
-    segmentChanged(event){
-        this.eventListType=event.detail.value;
+    segmentChanged(event) {
+        this.eventListType = event.detail.value;
     }
 
 }
