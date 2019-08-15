@@ -8,6 +8,12 @@ ion-content {
             }
         }
     }
+    ion-segment{
+        height: 40px;
+        ion-segment-button{
+            font-size: 15px;
+        }
+    }
     ion-list {
         &.event-list {
             ion-card {

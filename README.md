@@ -1,7 +1,6 @@
-# Happy60Plus
 
 ---
-# [Click here for desktop website](https:https://happy60plus.com/)
+# [Happy60Plus](https://happy60plus.com/)
 ---
 
 

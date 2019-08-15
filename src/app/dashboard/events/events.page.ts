@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
-
+import { EVENT } from './events.constant';
 @Component({
     selector: 'app-events',
     templateUrl: './events.page.html',
@@ -9,6 +9,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 export class EventsPage implements OnInit {
     
     @ViewChild(IonInfiniteScroll, { read: '', static: false }) infiniteScroll: IonInfiniteScroll;
+    eventListType:string=EVENT.TYPE.CURRENT;
     eventSearch:string='';
     eventList = [
         {
@@ -89,6 +90,10 @@ export class EventsPage implements OnInit {
 
     onEventSearchCancel(){
         this.eventSearch='';
+    }
+
+    segmentChanged(event){
+        this.eventListType=event.detail.value;
     }
 
 }
