@@ -1,11 +1,9 @@
 # Happy60Plus
 
-
 ---
 # [Click here for desktop website](https:https://happy60plus.com/)
 ---
 
-# @ngrx example application
 
 Example application utilizing @ngrx libraries, showcasing common patterns and best practices.
 Take a look at the [live app](http://ngrx.github.io/example-app/).
@@ -32,11 +30,11 @@ Built with [@angular/cli](https://github.com/angular/angular-cli)
 
 ```bash
 # clone the repo
-git clone https://github.com/ngrx/example-app.git
+git clone https://github.com/brijesh333/happy60plus.git
 
 
 # change directory to repo
-cd example-app
+cd happy60plus
 
 # Use npm or yarn to install the dependencies:
 npm install
@@ -45,10 +43,24 @@ npm install
 yarn
 
 # start the server
-ng serve
+ionic serve
 ```
 
-Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser
+Navigate to [http://localhost:8100/](http://localhost:8100/) in your browser
+
+
+### Build android app
+```bash
+# install android api version
+
+# If you have installed android studio then install [target api version](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels)
+
+# If you are using comand line sdk then install [gradle](https://gradle.org/install/).
+
+# build apk file
+ionic cordova build --release android
+
+```
 
 _NOTE:_ The above setup instructions assume you have added local npm bin folders to your path.
 If this is not the case you will need to install the Angular CLI globally.
