@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Service</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row *ngFor="let service of serviceList">
+            <ion-col>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{service.serviceName}}
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <!-- <ion-icon name="{{service.iconName}}"></ion-icon> -->
+                        {{service.serviceDesc}}
+                    </mat-card-content>
+                </mat-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

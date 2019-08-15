@@ -1,0 +1,92 @@
+ion-content {
+    mat-card {
+        &.registration-card {
+            mat-card-header {
+                mat-card-title {
+                    .mat-card-header-text {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+
+            mat-card-content {
+                mat-accordion {
+                    mat-expansion-panel {
+                        mat-form-field {
+                            display: block;
+
+                            &.dob-container,
+                            &.contact-detail-container {
+                                width: 47%;
+                                display: inline-block;
+                            }
+
+                            &.dob-container {
+                                margin-right: 6%;
+                            }
+                        }
+
+                        section {
+                            &.gender-section {
+                                margin: 10px 0px;
+
+                                label {
+                                    &.gender-label {
+                                        margin-right: 0px;
+                                    }
+                                }
+
+                                mat-radio-group {
+                                    mat-radio-button {
+                                        &.gender-radio {
+                                            margin: 0px 10px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.address-section {
+                                mat-form-field {
+                                    &.address-container {
+
+                                        &.city,
+                                        &.state {
+                                            width: 47%;
+                                            display: inline-block;
+                                        }
+
+                                        &.city {
+                                            margin-right: 6%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            mat-card-actions {
+                // display: flex;
+                // flex-grow: 1;
+                // justify-content: space-evenly;
+
+                button {
+                    display: block;
+                    width: 100%;
+                    margin: 15px 0px;
+                    &.login-button{
+                        margin-top: 5px;
+                    }
+                }
+                div{
+                    &.message-container{
+                        text-align: center;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

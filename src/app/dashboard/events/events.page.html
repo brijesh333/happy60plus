@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Events</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-button (click)="toggleInfiniteScroll()" expand="block">
+        Toggle Infinite Scroll
+    </ion-button> -->
+
+    <mat-form-field class="event-search-field" appearance="outline">
+        <mat-label>Events search</mat-label>
+        <input matInput placeholder="Search any event here . . ." value="">
+        <!-- <mat-icon matPrefix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+    <ion-list class="event-list">
+        <mat-card class="event-card" *ngFor="let event of eventList">
+            <mat-card-header>
+                <div mat-card-avatar class="event-icon">
+                    <ion-icon name="{{event.icon}}"></ion-icon>
+                </div>
+                <mat-card-title>{{event.title}}</mat-card-title>
+                <mat-card-subtitle>{{event.type}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="event-description-container">
+                    {{event.description}}
+                </div>
+                <div class="date-container">
+                    <span class="key"> Date</span>
+                    <span class="value"> {{event.date}}</span>
+                </div>
+                <div class="time-container">
+                    <span class="key"> Time</span>
+                    <span class="value"> {{event.time}}</span>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-stroked-button color="primary">Book</button>
+                <button mat-stroked-button>Share</button>
+            </mat-card-actions>
+        </mat-card>
+        <!-- <ion-card *ngFor="let event of eventList" class="event-card">
+            <ion-card-header>
+                <ion-card-subtitle>{{event.type}}</ion-card-subtitle>
+                <ion-card-title>{{event.title}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <div class="event-description-container">
+                    {{event.description}}
+                </div>
+                <div class="date-container">
+                    <span class="key"> Date</span>
+                    <span class="value"> {{event.date}}</span>
+                </div>
+                <div class="time-container">
+                    <span class="key"> Time</span>
+                    <span class="value"> {{event.time}}</span>
+                </div>
+                <button ion-button round>Round Button</button>
+                <div class="button-container">
+                    <ion-icon name="star"></ion-icon>
+                    <button ion-button round>Round Button</button>
+                </div>
+            </ion-card-content>
+        </ion-card> -->
+        <!-- <ion-item *ngFor="let item of eventList">
+            <ion-label>{{item.name}}</ion-label>
+        </ion-item> -->
+    </ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

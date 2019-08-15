@@ -1,0 +1,150 @@
+<ion-content>
+    <!-- <form #form="ngForm" (ngSubmit)="register(form)">
+        <ion-grid>
+            <ion-row color="primary" justify-content-center>
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <div text-center>
+                        <h3>Create your account!</h3>
+                    </div>
+                    <div padding>
+                        <ion-item>
+                            <ion-input name="name" type="text" placeholder="Name" ngModel required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="email" type="email" placeholder="your@email.com" ngModel required>
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="password" type="password" placeholder="Password" ngModel required>
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="confirm" type="password" placeholder="Password again" ngModel required>
+                            </ion-input>
+                        </ion-item>
+                    </div>
+                    <div padding>
+                        <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Register
+                        </ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form> -->
+    <form #form="ngForm">
+        <mat-card class="registration-card">
+            <mat-card-header>
+                <mat-card-title>Sign-Up as Partner</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Provider Detail
+                            </mat-panel-title>
+                            <!-- <mat-panel-description>
+                                    Type your name and age
+                                </mat-panel-description> -->
+                        </mat-expansion-panel-header>
+
+                        <mat-form-field>
+                            <input matInput placeholder="First Name"
+                                [(ngModel)]="registrationDetail.userDetail.firstName" name="userFirstName" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Last Name" [(ngModel)]="registrationDetail.userDetail.lastName"
+                                name="userLastName" required>
+                        </mat-form-field>
+                        <mat-form-field class="dob-container">
+                            <input matInput [matDatepicker]="dateOfBirthpicker" placeholder="Date of Birth"
+                                [(ngModel)]="registrationDetail.userDetail.dob" name="userDob" required>
+                            <mat-datepicker-toggle matSuffix [for]="dateOfBirthpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #dateOfBirthpicker></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field class='contact-detail-container'>
+                            <span matPrefix>+91 &nbsp;</span>
+                            <input matInput placeholder="Contact No"
+                                [(ngModel)]="registrationDetail.userDetail.contactNo" name="userContactNo" required>
+                        </mat-form-field>
+                        <!-- <section class="gender-section">
+                            <label class="gender-label">Sex : </label>
+                            <mat-radio-group (ngModel)]="registrationDetail.userDetail.gender" name="userGender">
+                                <mat-radio-button class="gender-radio" value="male">
+                                    Male
+                                </mat-radio-button>
+                                <mat-radio-button class="gender-radio" value="female">
+                                    Female
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </section> -->
+                        <mat-form-field class="email-container">
+                            <input matInput placeholder="Email Id" [(ngModel)]="registrationDetail.userDetail.emailId"
+                                name="userEmailId" required>
+                        </mat-form-field>
+                        <section class="address-section">
+                            <mat-form-field class="address-container address">
+                                <textarea matInput placeholder="Address"
+                                    [(ngModel)]="registrationDetail.userDetail.address" name="userAddress"
+                                    required></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="address-container city">
+                                <input matInput placeholder="City" [(ngModel)]="registrationDetail.userDetail.city"
+                                    name="userCity" required>
+                            </mat-form-field>
+                            <mat-form-field class="address-container state">
+                                <input matInput placeholder="State" [(ngModel)]="registrationDetail.userDetail.state"
+                                    name="userState" required>
+                            </mat-form-field>
+                            <mat-form-field class="address-container pincode">
+                                <input matInput #postalCode maxlength="6" placeholder="Postal Code" value="560102"
+                                    [(ngModel)]="registrationDetail.userDetail.pincode" name="userPincode" required>
+                                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+                            </mat-form-field>
+                        </section>
+                        <mat-action-row>
+                                <button mat-button color="primary" (click)="nextStep()">Next</button>
+                            </mat-action-row>
+
+                    </mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Emargency Contact Detail
+                            </mat-panel-title>
+                            <!-- <mat-panel-description>
+                                    Type your name and age
+                                </mat-panel-description> -->
+                        </mat-expansion-panel-header>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Name" [(ngModel)]="registrationDetail.emargencyDetail.name"
+                                name="emargencyContactName" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <span matPrefix>+91 &nbsp;</span>
+                            <input matInput placeholder="Contact No"
+                                [(ngModel)]="registrationDetail.emargencyDetail.contactNo" name="emargencyContactNo"
+                                required>
+                        </mat-form-field>
+                        <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                            <button mat-button color="primary" (click)="nextStep()">End</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="warn" (click)="register()" [disabled]="form.invalid">Register</button>
+                <div class="message-container">
+                    <label class="message">Already have a account?</label>
+                </div>
+                <button mat-raised-button color="primary" class="login-button" (click)="login()">Login</button>
+
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+</ion-content>

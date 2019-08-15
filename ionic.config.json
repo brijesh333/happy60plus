@@ -1,5 +1,7 @@
 {
   "name": "happy60plus",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

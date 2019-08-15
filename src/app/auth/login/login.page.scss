@@ -1,0 +1,64 @@
+ion-content {
+    div {
+        &.login-container {
+            mat-card {
+                &.login-card {
+                    margin-top: 150px;
+
+                    mat-card-header {
+                        mat-card-title {
+                            .mat-card-header-text {
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    mat-card-content {
+                        mat-form-field {
+                            display: block;
+                        }
+
+                        label {
+                            &.forgot-password-label {
+                                text-align: right;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    mat-card-actions {
+                        text-align: center;
+
+                        div {
+                            &.action-button-container {
+                                margin: 30px 0px;
+
+                                button {
+                                    // display: block;
+                                    width: 45%;
+                                    text-align: center;
+                                    margin: 0% 2%;
+                                }
+                            }
+
+                            &.other-login-option-container {
+                                button {
+                                    display: block;
+                                    margin: 20px 0px;
+                                    width: 60%;
+                                    margin-left: 20%;
+
+                                    ion-icon {
+                                        font-size: 20px;
+                                        margin: 0px 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

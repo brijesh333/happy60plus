@@ -1,0 +1,4 @@
+export const SOURCE={
+    USER:'USER',
+    SERVICEPROVIDER:'SERVICEPROVIDER'
+}

@@ -1,0 +1,102 @@
+ion-content {
+    mat-form-field{
+        &.event-search-field{
+            margin: 5px 10px;
+            display: block;
+            mat-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+    ion-list {
+        &.event-list {
+            ion-card {
+                &.event-card {
+                    ion-card-header {
+                        padding: 10px;
+
+                        ion-card-title {
+                            font-size: 20px;
+                        }
+
+                        ion-card-subtitle {
+                            color: #888;
+                        }
+                    }
+
+                    ion-card-content {
+                        padding: 10px;
+
+                        div {
+                            &.event-description-container {
+                                margin: 5px 0px;
+                            }
+
+                            &.date-container,
+                            &.time-container {
+                                display: block;
+
+                                span {
+                                    &.key {}
+
+                                    &.value {
+                                        color: #111;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            mat-card {
+                &.event-card {
+                    margin: 10px;
+
+                    mat-card-header {
+                        div {
+                            &.event-icon {
+                                font-size: 32px;
+                            }
+                        }
+
+                        mat-card-title {}
+                    }
+
+                    mat-card-content {
+                        div {
+                            &.event-description-container {
+                                margin: 5px 0px;
+                                font-size: 16px;
+                                color: #888;
+                            }
+
+                            &.date-container,
+                            &.time-container {
+                                display: block;
+                                margin: 5px 0px;
+
+                                span {
+                                    &.key {
+                                        color: #999;
+                                    }
+
+                                    &.value {
+                                        color: #111;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    mat-card-actions {
+                        button {
+                            margin: 0px 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
