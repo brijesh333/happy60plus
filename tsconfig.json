@@ -25,14 +25,26 @@
             "@env/*": [
                 "src/environments/*"
             ],
+            "@constants/*": [
+                "src/app/constants/*"
+            ],
             "@auth/*": [
                 "src/app/auth/*"
             ],
             "@core/*": [
                 "src/app/core/*"
             ],
+            "@dashboard/*": [
+                "src/app/dashboard/*"
+            ],
+            "@store/*": [
+                "src/app/store/*"
+            ],
             "@shared/*": [
                 "src/app/shared/*"
+            ],
+            "@services/*": [
+                "src/app/services/*"
             ]
         }
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SOURCE } from '../constants/';
+import { SOURCE } from '@auth/constants/';
 
 @Component({
     selector: 'app-index',
@@ -26,7 +26,7 @@ export class IndexPage implements OnInit {
         }
         this.router.navigate(['/auth/login', { source: this.source }], {
             replaceUrl: true,
-            skipLocationChange: true
+            // skipLocationChange: true
         });
     }
 

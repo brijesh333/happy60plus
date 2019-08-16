@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from '../../core/authentication';
+import { AuthenticationService } from '@core/authentication';
 import { AlertService } from '../../services/alert.service';
-import { SOURCE } from '../constants/';
+import { SOURCE } from '@auth/constants/';
 @Component({
     selector: 'app-login',
     templateUrl: './login.page.html',
@@ -42,13 +42,13 @@ export class LoginPage implements OnInit {
         if (this.source === SOURCE.USER) {
             this.router.navigate(['/auth/registerUser', { source: this.source }], {
                 replaceUrl: true,
-                skipLocationChange: true
+                // skipLocationChange: true
             });
         }
         else {
             this.router.navigate(['/auth/registerProvider', { source: this.source }], {
                 replaceUrl: true,
-                skipLocationChange: true
+                // skipLocationChange: true
             });
         }
 

@@ -19,8 +19,8 @@ const routes: Routes = [
         loadChildren: './index/index.module#IndexPageModule'
     },
     {
-        path: '',
-        loadChildren: './login/login.module#LoginPageModule'
+        path: '**',
+        loadChildren: './index/index.module#IndexPageModule'
     }
 ];
 

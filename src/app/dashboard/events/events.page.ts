@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { EVENT } from './events.constant';
+import { Store } from '@ngrx/store';
+import { EventState } from '@app/store/states';
+import { GetEventList } from '@app/store/actions';
+import { getEventList } from '@store/store.module';
 @Component({
     selector: 'app-events',
     templateUrl: './events.page.html',
@@ -37,9 +41,20 @@ export class EventsPage implements OnInit {
             time: '8:00am-10:00am'
         }
     ];
-    constructor() { }
+    constructor(
+        private store: Store<EventState>
+    ) { }
 
     ngOnInit() {
+        this.store.dispatch(new GetEventList(''));
+        this.store.select(getEventList)
+            .subscribe(
+                response => {
+                    if (response) {
+                        console.log(response);
+                    }
+                }
+            )
     }
 
     loadData(event) {
