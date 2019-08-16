@@ -20,14 +20,13 @@ export class EventEffect {
     getEventList: Observable<any> = this.actions
         .pipe(
             ofType(types.EVENT_TYPES.GET_EVENT_LIST),
-            // switchMap((actions) => this.eventService.eventList(actions)),
-            // switchMap((response:any) =>{
-            //     console.log(response);
-            //     return [
-            //         new EventListResponse(response)
-            //     ]
-            // })
-            map(response => new EventListResponse(response))
+            switchMap((actions) => this.eventService.eventList(actions)),
+            switchMap((response: any) => {                
+                return [
+                    new EventListResponse(response)
+                ]
+            })
+            // map(response => new EventListResponse(response))
         );
 
 

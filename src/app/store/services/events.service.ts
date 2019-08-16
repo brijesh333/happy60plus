@@ -43,8 +43,8 @@ export class EventService {
     public eventList = (action): Observable<any> => {
         return this.http.get(this.url)
             .pipe(
-                map((response) => {
-                    return this.eventList;
+                map((response) => {                    
+                    return events;
                 })
             )
     }
