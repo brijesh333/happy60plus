@@ -26,16 +26,17 @@ export class AuthenticationService {
     ) {
         const savedCredentials = this.localStorageService.getItem(credentialsKey);
         if (savedCredentials) {
-            this._credentials = JSON.parse(savedCredentials);
+            this.credentials = JSON.parse(savedCredentials);
         }
     }
-    private _credentials: Authentication.Credentials | null;
+    private credentials: Authentication.Credentials | null;
     public credentials$ = new EventEmitter<Authentication.Credentials>();
 
 
 
     auth_server = 'http://localhost:3000';
     authSubject = new BehaviorSubject(false);
+
     /**
      * Checks is the user is authenticated.
      * @return {boolean} True if the user is authenticated.
@@ -96,7 +97,7 @@ export class AuthenticationService {
     //             });
     //         });
     //     })
-        
+
     // }
 
     async logout() {

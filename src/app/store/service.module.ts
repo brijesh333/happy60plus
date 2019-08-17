@@ -9,5 +9,5 @@ import {
     ]
 })
 export class ServiceModule {
-   
+
 }

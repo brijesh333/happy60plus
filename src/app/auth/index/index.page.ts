@@ -19,9 +19,8 @@ export class IndexPage implements OnInit {
 
     login(source: string) {
         if (source === 'user') {
-            this.source = SOURCE.USER
-        }
-        else {
+            this.source = SOURCE.USER;
+        } else {
             this.source = SOURCE.SERVICEPROVIDER;
         }
         this.router.navigate(['/auth/login', { source: this.source }], {

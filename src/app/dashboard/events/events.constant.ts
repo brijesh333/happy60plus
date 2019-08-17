@@ -1,7 +1,7 @@
-export const EVENT={
-    TYPE:{
-        CURRENT:'CURRENT',
-        ONGOING:'ONGOING',
-        REQUEST:'REQUEST'
+export const EVENT = {
+    TYPE: {
+        CURRENT: 'CURRENT',
+        ONGOING: 'ONGOING',
+        REQUEST: 'REQUEST'
     }
-}
+};

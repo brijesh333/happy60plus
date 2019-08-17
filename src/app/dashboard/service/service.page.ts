@@ -12,34 +12,34 @@ export class ServicePage implements OnInit {
             serviceId: '1',
             iconName: 'help-circle-outline',
             serviceName: 'Help Buddy',
-            serviceDesc:'Personal assist, daily care service'
+            serviceDesc: 'Personal assist, daily care service'
 
         },
         {
             serviceId: '2',
             iconName: 'basket',
             serviceName: 'Grocery',
-            serviceDesc:''
+            serviceDesc: ''
         },
         {
             serviceId: '3',
             iconName: 'basket',
             serviceName: 'Health Assist',
-            serviceDesc:''
+            serviceDesc: ''
         },
         {
             serviceId: '4',
             iconName: 'basket',
             serviceName: 'Party Planning',
-            serviceDesc:''
+            serviceDesc: ''
         },
         {
             serviceId: '5',
             iconName: 'add-circle-outline',
             serviceName: 'Medicine',
-            serviceDesc:'Buy medicine,'
+            serviceDesc: 'Buy medicine,'
         }
-    ]
+    ];
     constructor() { }
 
     ngOnInit() {

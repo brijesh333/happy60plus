@@ -31,8 +31,7 @@ export class LoginPage implements OnInit {
         this.authService.login(this.userDetails).subscribe((res) => {
             if (res) {
                 this.router.navigateByUrl('dashboard');
-            }
-            else {
+            } else {
 
             }
         });
@@ -44,8 +43,7 @@ export class LoginPage implements OnInit {
                 replaceUrl: true,
                 skipLocationChange: true
             });
-        }
-        else {
+        } else {
             this.router.navigate(['/auth/registerProvider', { source: this.source }], {
                 replaceUrl: true,
                 skipLocationChange: true

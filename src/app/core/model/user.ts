@@ -15,8 +15,8 @@ export interface GuardianDetail {
 }
 
 interface IuserObj {
-    type: string,
-    userInfo: IuserDetail
+    type: string;
+    userInfo: IuserDetail;
 }
 
 interface IuserDetail {
@@ -26,7 +26,7 @@ interface IuserDetail {
     contactNo: string;
     emailId: string;
     gender: string;
-    addressDetails: IaddressDetails
+    addressDetails: IaddressDetails;
 }
 
 interface IaddressDetails {

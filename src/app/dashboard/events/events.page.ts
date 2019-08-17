@@ -14,7 +14,7 @@ export class EventsPage implements OnInit {
 
     @ViewChild(IonInfiniteScroll, { read: '', static: false }) infiniteScroll: IonInfiniteScroll;
     eventListType: string = EVENT.TYPE.CURRENT;
-    eventSearch: string = '';
+    eventSearch = '';
     eventList = [];
     constructor(
         private store: Store<EventState>
@@ -26,16 +26,16 @@ export class EventsPage implements OnInit {
             .subscribe(
                 response => {
                     if (response) {
-                        this.eventList = response.eventList
+                        this.eventList = response.eventList;
                     }
                 }
-            )
+            );
     }
 
     loadData(event) {
         return new Promise((resolve) => {
             setTimeout(() => {
-                for (var i = 0; i < 3; i++) {
+                for (let i = 0; i < 3; i++) {
                     this.eventList.push(
                         {
                             icon: 'walk',
@@ -67,7 +67,7 @@ export class EventsPage implements OnInit {
                 console.log('Async operation has ended');
                 resolve();
             }, 500);
-        })
+        });
     }
 
     toggleInfiniteScroll() {

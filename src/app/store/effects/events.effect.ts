@@ -21,10 +21,10 @@ export class EventEffect {
         .pipe(
             ofType(types.EVENT_TYPES.GET_EVENT_LIST),
             switchMap((actions) => this.eventService.eventList(actions)),
-            switchMap((response: any) => {                
+            switchMap((response: any) => {
                 return [
                     new EventListResponse(response)
-                ]
+                ];
             })
             // map(response => new EventListResponse(response))
         );

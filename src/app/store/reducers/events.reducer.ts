@@ -6,9 +6,9 @@ import * as types from '../types';
 export function EventsReducer(state = eventInitialState, action: EventActions): EventState {
     switch (action.type) {
         case types.EVENT_TYPES.GET_EVENT_LIST_RESPONSE:
-            const eventList = (<EventListResponse>action).payload;
+            const eventList = (action as EventListResponse).payload;
             return Object.assign({}, state, {
-                eventList:eventList
+                eventList
             });
 
         default:

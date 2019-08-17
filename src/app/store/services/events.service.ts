@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
 export const events = [
     {
@@ -28,7 +28,7 @@ export const events = [
         date: '03-Aug-2019',
         time: '8:00am-10:00am'
     }
-]
+];
 
 @Injectable()
 export class EventService {
@@ -43,9 +43,9 @@ export class EventService {
     public eventList = (action): Observable<any> => {
         return this.http.get(this.url)
             .pipe(
-                map((response) => {                    
+                map((response) => {
                     return events;
                 })
-            )
+            );
     }
 }

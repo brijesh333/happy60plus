@@ -41,7 +41,7 @@ import { ServiceModule } from '@store/service.module';
         SplashScreen,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
     ],
-    schemas:[
+    schemas: [
         NO_ERRORS_SCHEMA
     ],
     bootstrap: [

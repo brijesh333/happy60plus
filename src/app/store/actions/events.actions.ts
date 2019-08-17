@@ -7,17 +7,17 @@ export class GetEventList implements Action {
     constructor(eventType: any) {
         this.payload = {
             eventType
-        }
+        };
     }
 }
 
-export class EventListResponse implements Action{
-    readonly type=types.EVENT_TYPES.GET_EVENT_LIST_RESPONSE;
-    readonly payload:any={}
-    constructor(eventList){
-        this.payload={
+export class EventListResponse implements Action {
+    readonly type = types.EVENT_TYPES.GET_EVENT_LIST_RESPONSE;
+    readonly payload: any = {};
+    constructor(eventList) {
+        this.payload = {
             eventList
-        }
+        };
     }
 }
 
