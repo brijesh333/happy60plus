@@ -11,55 +11,51 @@ ion-content {
             }
 
             mat-card-content {
-                mat-accordion {
-                    mat-expansion-panel {
-                        mat-form-field {
-                            display: block;
+                mat-form-field {
+                    display: block;
 
-                            &.dob-container,
-                            &.contact-detail-container {
-                                width: 47%;
-                                display: inline-block;
-                            }
+                    &.dob-container,
+                    &.contact-detail-container {
+                        width: 47%;
+                        display: inline-block;
+                    }
 
-                            &.dob-container {
-                                margin-right: 6%;
+                    &.dob-container {
+                        margin-right: 6%;
+                    }
+                }
+
+                section {
+                    &.gender-section {
+                        margin: 10px 0px;
+
+                        label {
+                            &.gender-label {
+                                margin-right: 0px;
                             }
                         }
 
-                        section {
-                            &.gender-section {
-                                margin: 10px 0px;
-
-                                label {
-                                    &.gender-label {
-                                        margin-right: 0px;
-                                    }
-                                }
-
-                                mat-radio-group {
-                                    mat-radio-button {
-                                        &.gender-radio {
-                                            margin: 0px 10px;
-                                        }
-                                    }
+                        mat-radio-group {
+                            mat-radio-button {
+                                &.gender-radio {
+                                    margin: 0px 10px;
                                 }
                             }
+                        }
+                    }
 
-                            &.address-section {
-                                mat-form-field {
-                                    &.address-container {
+                    &.address-section {
+                        mat-form-field {
+                            &.address-container {
 
-                                        &.city,
-                                        &.state {
-                                            width: 47%;
-                                            display: inline-block;
-                                        }
+                                &.city,
+                                &.state {
+                                    width: 47%;
+                                    display: inline-block;
+                                }
 
-                                        &.city {
-                                            margin-right: 6%;
-                                        }
-                                    }
+                                &.city {
+                                    margin-right: 6%;
                                 }
                             }
                         }

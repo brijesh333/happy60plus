@@ -14,18 +14,23 @@ export class RegisterProviderPage implements OnInit {
     step = 0;
     registrationDetail = {
         userDetail: {
-            firstName: '',
-            lastName: '',
-            dob: '',
-            contactNo: '',
-            emailId: '',
-            gender: 'male',
-            address: '',
-            city: '',
-            state: '',
-            pincode: ''
+            type: 'serviceProvider',
+            userInfo: {
+                firstName: '',
+                lastName: '',
+                dob: '',
+                contactNo: '',
+                emailId: '',
+                gender: 'male',
+                addressDetails: {
+                    address: '',
+                    city: '',
+                    state: '',
+                    pincode: ''
+                }
+            }
         },
-        emargencyDetail: {
+        emargencyContactDetail: {
             name: '',
             contactNo: ''
         }

@@ -42,13 +42,13 @@ export class LoginPage implements OnInit {
         if (this.source === SOURCE.USER) {
             this.router.navigate(['/auth/registerUser', { source: this.source }], {
                 replaceUrl: true,
-                // skipLocationChange: true
+                skipLocationChange: true
             });
         }
         else {
             this.router.navigate(['/auth/registerProvider', { source: this.source }], {
                 replaceUrl: true,
-                // skipLocationChange: true
+                skipLocationChange: true
             });
         }
 

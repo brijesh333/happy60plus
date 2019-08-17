@@ -26,7 +26,7 @@ export class IndexPage implements OnInit {
         }
         this.router.navigate(['/auth/login', { source: this.source }], {
             replaceUrl: true,
-            // skipLocationChange: true
+            skipLocationChange: true
         });
     }
 

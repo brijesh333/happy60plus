@@ -72,24 +72,24 @@
                         </mat-expansion-panel-header>
 
                         <mat-form-field>
-                            <input matInput placeholder="First Name" [(ngModel)]="registrationDetail.userDetail.firstName" name="userFirstName" required>
+                            <input matInput placeholder="First Name" [(ngModel)]="registrationDetail.userDetail.userInfo.firstName" name="userFirstName" required>
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="Last Name" [(ngModel)]="registrationDetail.userDetail.lastName" name="userLastName"  required>
+                            <input matInput placeholder="Last Name" [(ngModel)]="registrationDetail.userDetail.userInfo.lastName" name="userLastName"  required>
                         </mat-form-field>
                         <mat-form-field class="dob-container">
-                            <input matInput [matDatepicker]="dateOfBirthpicker" placeholder="Date of Birth" [(ngModel)]="registrationDetail.userDetail.dob" name="userDob" required>
+                            <input matInput [matDatepicker]="dateOfBirthpicker" placeholder="Date of Birth" [(ngModel)]="registrationDetail.userDetail.userInfo.dob" name="userDob" required>
                             <mat-datepicker-toggle matSuffix [for]="dateOfBirthpicker"></mat-datepicker-toggle>
                             <mat-datepicker #dateOfBirthpicker></mat-datepicker>
                         </mat-form-field>
 
                         <mat-form-field class='contact-detail-container'>
                             <span matPrefix>+91 &nbsp;</span>
-                            <input matInput placeholder="Contact No" [(ngModel)]="registrationDetail.userDetail.contactNo" name="userContactNo" required>
+                            <input matInput placeholder="Contact No" [(ngModel)]="registrationDetail.userDetail.userInfo.contactNo" name="userContactNo" required>
                         </mat-form-field>
-                        <!-- <section class="gender-section">
+                        <section class="gender-section">
                             <label class="gender-label">Sex : </label>
-                            <mat-radio-group (ngModel)]="registrationDetail.userDetail.gender" name="userGender">
+                            <mat-radio-group  [(ngModel)]="registrationDetail.userDetail.userInfo.gender" name="userGender">
                                 <mat-radio-button class="gender-radio" value="male">
                                     Male
                                 </mat-radio-button>
@@ -97,22 +97,22 @@
                                     Female
                                 </mat-radio-button>
                             </mat-radio-group>
-                        </section> -->
+                        </section>
                         <mat-form-field class="email-container">
-                            <input matInput placeholder="Email Id" [(ngModel)]="registrationDetail.userDetail.emailId" name="userEmailId" required>
+                            <input matInput placeholder="Email Id" [(ngModel)]="registrationDetail.userDetail.userInfo.emailId" name="userEmailId" required>
                         </mat-form-field>
                         <section class="address-section">
                             <mat-form-field class="address-container address">
-                                <textarea matInput placeholder="Address" [(ngModel)]="registrationDetail.userDetail.address" name="userAddress" required></textarea>
+                                <textarea matInput placeholder="Address" [(ngModel)]="registrationDetail.userDetail.userInfo.addressDetails.address" name="userAddress" required></textarea>
                             </mat-form-field>
                             <mat-form-field class="address-container city">
-                                <input matInput placeholder="City" [(ngModel)]="registrationDetail.userDetail.city" name="userCity" required>
+                                <input matInput placeholder="City" [(ngModel)]="registrationDetail.userDetail.userInfo.addressDetails.city" name="userCity" required>
                             </mat-form-field>
                             <mat-form-field class="address-container state">
-                                <input matInput placeholder="State" [(ngModel)]="registrationDetail.userDetail.state" name="userState" required>
+                                <input matInput placeholder="State" [(ngModel)]="registrationDetail.userDetail.userInfo.addressDetails.state" name="userState" required>
                             </mat-form-field>
                             <mat-form-field class="address-container pincode">
-                                <input matInput #postalCode maxlength="6" placeholder="Postal Code" value="560102" [(ngModel)]="registrationDetail.userDetail.pincode" name="userPincode"
+                                <input matInput #postalCode maxlength="6" placeholder="Postal Code" value="560102" [(ngModel)]="registrationDetail.userDetail.userInfo.addressDetails.pincode" name="userPincode"
                                     required>
                                 <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
                             </mat-form-field>
@@ -134,12 +134,12 @@
                         </mat-expansion-panel-header>
 
                         <mat-form-field>
-                            <input matInput placeholder="Name" [(ngModel)]="registrationDetail.emargencyDetail.name" name="emargencyContactName" required>
+                            <input matInput placeholder="Name" [(ngModel)]="registrationDetail.emargencyContactDetail.name" name="emargencyContactName" required>
                         </mat-form-field>
 
                         <mat-form-field>
                             <span matPrefix>+91 &nbsp;</span>
-                            <input matInput placeholder="Contact No" [(ngModel)]="registrationDetail.emargencyDetail.contactNo" name="emargencyContactNo" required>
+                            <input matInput placeholder="Contact No" [(ngModel)]="registrationDetail.emargencyContactDetail.contactNo" name="emargencyContactNo" required>
                         </mat-form-field>
                         <mat-action-row>
                             <button mat-button color="warn" (click)="prevStep()">Previous</button>

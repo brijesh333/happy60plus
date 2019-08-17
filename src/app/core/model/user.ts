@@ -5,8 +5,8 @@ export interface User {
 
 export interface RegistrationDetail {
     guardian?: GuardianDetail;
-    userDetail: userDetail;
-    emargencyDetail: EmargencyDetail;
+    userDetail: IuserObj;
+    emargencyContactDetail?: EmargencyDetail;
 }
 
 export interface GuardianDetail {
@@ -14,13 +14,22 @@ export interface GuardianDetail {
     contactNo: string;
 }
 
-export interface userDetail {
+interface IuserObj {
+    type: string,
+    userInfo: IuserDetail
+}
+
+interface IuserDetail {
     firstName: string;
     lastName: string;
     dob: string;
     contactNo: string;
     emailId: string;
     gender: string;
+    addressDetails: IaddressDetails
+}
+
+interface IaddressDetails {
     address: string;
     city: string;
     state: string;
