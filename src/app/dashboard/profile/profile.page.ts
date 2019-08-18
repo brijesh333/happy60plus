@@ -19,7 +19,7 @@ export class ProfilePage implements OnInit {
 
     logOut() {
         if (this.authService.logout()) {
-            this.router.navigateByUrl('login');
+            this.router.navigateByUrl('/auth/index');
         } else {
 
         }

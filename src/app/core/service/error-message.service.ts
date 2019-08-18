@@ -3,28 +3,28 @@ import { ErrorModel } from '../model/error.model';
 
 @Injectable()
 export class ErrorMessageService {
-    private _errors: ErrorModel.ErrorMessageObject[] = [];
+    private errorsDetail: ErrorModel.ErrorMessageObject[] = [];
     public errors$ = new EventEmitter<ErrorModel.ErrorMessageObject[]>();
 
     constructor() { }
 
     get errors(): ErrorModel.ErrorMessageObject[] {
-        return this._errors;
+        return this.errorsDetail;
     }
 
     public set(error: string, type: string, serviceUrl: string) {
-        this._errors.push({
+        this.errorsDetail.push({
             id: Date.now(),
             error,
             type,
             serviceUrl
         });
-        console.log(this._errors);
-        this.errors$.emit(this._errors);
+        console.log(this.errorsDetail);
+        this.errors$.emit(this.errorsDetail);
     }
 
     public clear() {
-        this._errors = [];
-        this.errors$.emit(this._errors);
+        this.errorsDetail = [];
+        this.errors$.emit(this.errorsDetail);
     }
 }

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import {
-    EventService
-} from './services/events.service';
+    EventService,
+    ServicesService
+} from '@store/services';
 
 @NgModule({
     providers: [
-        EventService
+        EventService,
+        ServicesService
     ]
 })
 export class ServiceModule {

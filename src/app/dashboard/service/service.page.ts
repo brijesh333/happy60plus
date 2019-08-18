@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ServiceState } from '@app/store/states';
+import { Store } from '@ngrx/store';
+import { GetServiceList } from '@store/actions';
+import { getServiceList } from '@app/store/store.module';
 @Component({
     selector: 'app-service',
     templateUrl: './service.page.html',
@@ -7,42 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicePage implements OnInit {
 
-    serviceList = [
-        {
-            serviceId: '1',
-            iconName: 'help-circle-outline',
-            serviceName: 'Help Buddy',
-            serviceDesc: 'Personal assist, daily care service'
+    serviceList: any = [];
 
-        },
-        {
-            serviceId: '2',
-            iconName: 'basket',
-            serviceName: 'Grocery',
-            serviceDesc: ''
-        },
-        {
-            serviceId: '3',
-            iconName: 'basket',
-            serviceName: 'Health Assist',
-            serviceDesc: ''
-        },
-        {
-            serviceId: '4',
-            iconName: 'basket',
-            serviceName: 'Party Planning',
-            serviceDesc: ''
-        },
-        {
-            serviceId: '5',
-            iconName: 'add-circle-outline',
-            serviceName: 'Medicine',
-            serviceDesc: 'Buy medicine,'
-        }
-    ];
-    constructor() { }
+    constructor(
+        private store: Store<ServiceState>
+    ) { }
 
     ngOnInit() {
+        this.store.dispatch(new GetServiceList());
+        this.store.select(getServiceList)
+            .subscribe(
+                response => {
+                    if (response) {
+                        this.serviceList = response.serviceList;
+                    }
+                }
+            );
     }
 
 }

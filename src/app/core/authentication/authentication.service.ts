@@ -34,7 +34,7 @@ export class AuthenticationService {
 
 
 
-    auth_server = 'http://localhost:3000';
+    authServer = 'http://localhost:3000';
     authSubject = new BehaviorSubject(false);
 
     /**
@@ -47,7 +47,7 @@ export class AuthenticationService {
     }
 
     // register(detail: RegistrationDetail): Observable<AuthResponse> {
-    //     return this.httpClient.post<AuthResponse>(`${this.auth_server}/register`, detail).pipe(
+    //     return this.httpClient.post<AuthResponse>(`${this.authServer}/register`, detail).pipe(
     //         tap(async (res: AuthResponse) => {
     //             if (res.user) {
     //                 await this.storage.set('ACCESS_TOKEN', res.user.access_token);
@@ -68,7 +68,7 @@ export class AuthenticationService {
     }
 
     login(user: User): Observable<AuthResponse> {
-        return this.httpClient.post(`${this.auth_server}/login`, user).pipe(
+        return this.httpClient.post(`${this.authServer}/login`, user).pipe(
             tap(async (res: AuthResponse) => {
                 if (res.user) {
                     await this.storage.set('ACCESS_TOKEN', res.user.access_token);
